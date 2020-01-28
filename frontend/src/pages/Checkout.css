@@ -1,0 +1,97 @@
+.Checkout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+
+.Checkout-header,
+.Checkout-summary {
+  flex: 100%;
+}
+
+.Checkout-form {
+  flex: 100%;
+  display: flex;
+}
+
+.Checkout-actions {
+  display: flex;
+  flex-direction: row;
+}
+
+.Checkout-package-remove {
+  display: inline-block;
+  font-weight: 400;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Checkout-package-remove:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.Checkout-package-remove:active {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+.Checkout-actions__next button {
+  display: inline-block;
+  font-weight: 400;
+  color: #28a745;
+  border: 1px solid #28a745;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Checkout-actions__next button:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.Checkout-actions__next button:active {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.Checkout-form li {
+  list-style: none;
+}
+
+.Checkout-form .error {
+  color: #dc3545;
+  margin: 0.5rem 0;
+}

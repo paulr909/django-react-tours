@@ -1,0 +1,33 @@
+.List p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.List-header {
+  padding-bottom: 0.1rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #141414;
+  color: #3c6b92;
+  margin-top: 1.6rem;
+}
+
+.List-intro h3 {
+  color: #3c6b92;
+  margin: 1.2rem 0 0.2rem;
+}
+
+.List-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.List-items .Item {
+  flex: 30% 0 1;
+  padding: 1rem;
+}
+
+.List .Pagination {
+  text-align: right;
+}

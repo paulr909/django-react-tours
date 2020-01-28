@@ -1,0 +1,52 @@
+.Details {
+  display: flex;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.Details-content {
+  flex: 1 70%;
+}
+
+.Details-reserve {
+  flex: 1 30%;
+}
+
+.Details-label {
+  font-weight: bold;
+}
+
+.Details-buy {
+  display: inline-block;
+  font-weight: 400;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Details-buy:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.Details-buy:active {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}

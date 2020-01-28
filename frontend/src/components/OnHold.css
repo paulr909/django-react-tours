@@ -1,0 +1,10 @@
+.OnHold {
+  width: 40%;
+  border-radius: 0.25rem;
+  border: 1px solid #a115b8;
+  color: #a115b8;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  font-size: 14px;
+  text-align: center;
+}

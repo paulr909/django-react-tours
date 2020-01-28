@@ -1,0 +1,67 @@
+.Item img {
+  float: right;
+}
+
+.Item h3 {
+  font-size: 18px;
+}
+
+.Item h3 a,
+.Item h3 a:visited,
+.Item h3 a:active {
+  text-decoration: none;
+  font-weight: normal;
+  color: #111;
+}
+
+.Item-more {
+  display: inline-block;
+  font-weight: 400;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.Item-more:hover {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.Item-more:active {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
+}
+
+.Item-price {
+  font-weight: bold;
+}
+
+.Item-rating svg {
+  color: #aaa;
+}
+
+.Item-rating__easy svg:nth-child(1),
+.Item-rating__medium svg:nth-child(1),
+.Item-rating__medium svg:nth-child(2),
+.Item-rating__hard svg:nth-child(1),
+.Item-rating__hard svg:nth-child(2),
+.Item-rating__hard svg:nth-child(3) {
+  color: #007d8c;
+}
