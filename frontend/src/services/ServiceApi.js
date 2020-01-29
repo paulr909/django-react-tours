@@ -6,7 +6,7 @@ const clientSecret =
 
 let _accessToken;
 
-export function getAccessToken() {
+export const getAccessToken = () => {
   return new Promise(resolve => {
     if (_accessToken) {
       resolve(_accessToken);
@@ -23,9 +23,9 @@ export function getAccessToken() {
       });
     }
   });
-}
+};
 
-export async function getConfig() {
+export const getConfig = async () => {
   const accessToken = await getAccessToken();
   const config = {
     headers: {
@@ -35,7 +35,7 @@ export async function getConfig() {
   return new Promise(resolve => {
     resolve(config);
   });
-}
+};
 
 export default {
   async retrieveWishList() {
