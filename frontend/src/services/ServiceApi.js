@@ -7,7 +7,7 @@ const clientSecret =
 let _accessToken;
 
 export const getAccessToken = () => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     if (_accessToken) {
       resolve(_accessToken);
     } else {
@@ -15,9 +15,9 @@ export const getAccessToken = () => {
         grant_type: "client_credentials",
         client_id: clientId,
         client_secret: clientSecret,
-        scope: "read"
+        scope: "read",
       };
-      Axios.post("/oauth/token/", data).then(response => {
+      Axios.post("/oauth/token/", data).then((response) => {
         _accessToken = response.data.access_token;
         resolve(_accessToken);
       });
@@ -29,10 +29,10 @@ export const getConfig = async () => {
   const accessToken = await getAccessToken();
   const config = {
     headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+      Authorization: `Bearer ${accessToken}`,
+    },
   };
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     resolve(config);
   });
 };
@@ -40,8 +40,8 @@ export const getConfig = async () => {
 export default {
   async retrieveWishList() {
     const config = await getConfig();
-    return new Promise(resolve => {
-      Axios.get("/api/v1/wish-list/", config).then(response => {
+    return new Promise((resolve) => {
+      Axios.get("/api/v1/wish-list/", config).then((response) => {
         resolve(response.data);
       });
     });
@@ -66,8 +66,8 @@ export default {
 
   async retrieveDetails(id) {
     const config = await getConfig();
-    return new Promise(resolve => {
-      Axios.get(`/api/v1/public/packages/${id}/`, config).then(response => {
+    return new Promise((resolve) => {
+      Axios.get(`/api/v1/public/packages/${id}/`, config).then((response) => {
         resolve(response.data);
       });
     });
@@ -77,8 +77,8 @@ export default {
     const config = await getConfig();
     config["params"] = queryParams;
     config["params"]["page"] = pageIndex;
-    return new Promise(resolve => {
-      Axios.get("/api/v1/public/packages/", config).then(response => {
+    return new Promise((resolve) => {
+      Axios.get("/api/v1/public/packages/", config).then((response) => {
         resolve(response.data);
       });
     });
@@ -88,12 +88,12 @@ export default {
     const config = await getConfig();
     return new Promise((resolve, reject) => {
       Axios.post("/api/v1/bookings/", data, config)
-        .then(response => {
+        .then((response) => {
           resolve(response.data);
         })
-        .catch(error => {
+        .catch((error) => {
           reject(error.response.data);
         });
     });
-  }
+  },
 };

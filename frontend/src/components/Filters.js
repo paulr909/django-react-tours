@@ -7,12 +7,12 @@ export default class Filters extends React.Component {
     this.state = {
       price_min: "",
       price_max: "",
-      search: ""
+      search: "",
     };
   }
 
   updateFilter(field) {
-    return event => {
+    return (event) => {
       const filters = {};
       filters[field] = event.target.value;
       this.setState(filters);

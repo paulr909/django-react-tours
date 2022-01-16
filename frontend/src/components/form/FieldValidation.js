@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export function useValidation() {
   const [error, setError] = useState(null);
-  const validate = event => {
+  const validate = (event) => {
     if (event.target.value.length === 0) {
       setError("Field cannot be empty");
     } else {

@@ -11,11 +11,11 @@ export default class Details extends React.Component {
     super(props);
     this.state = { details: null, alreadyAddedToCart: false };
     const { id } = props.match.params;
-    ServiceApi.retrieveDetails(id).then(details => {
+    ServiceApi.retrieveDetails(id).then((details) => {
       const { item } = this.context;
       this.setState({
         details,
-        alreadyAddedToCart: item && item.id === id
+        alreadyAddedToCart: item && item.id === id,
       });
     });
   }
@@ -28,7 +28,7 @@ export default class Details extends React.Component {
   render() {
     const { details, alreadyAddedToCart } = this.state;
     if (details === null) {
-      return <section className="Details"/>;
+      return <section className="Details" />;
     }
     return (
       <section className="Details" data-testid="details">

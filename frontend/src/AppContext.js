@@ -5,5 +5,5 @@ export const AppContext = React.createContext({
   wishList: [],
   handleToggleWishList: () => {},
   addToCart: () => {},
-  removeFromCart: () => {}
+  removeFromCart: () => {},
 });

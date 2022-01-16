@@ -4,7 +4,7 @@ import { useValidation } from "./FieldValidation";
 
 export function FormFieldHook({ name, label, value, onUpdate }) {
   const [ErrorDisplay, validate] = useValidation();
-  const onChange = event => {
+  const onChange = (event) => {
     validate(event);
     onUpdate(name, event.target.value);
   };

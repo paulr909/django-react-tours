@@ -6,7 +6,7 @@ import "./AddToWishList.css";
 const AddToWishList = ({ itemId }) => {
   return (
     <AppContext.Consumer>
-      {context => {
+      {(context) => {
         return (
           <button
             className="AddToWishList"

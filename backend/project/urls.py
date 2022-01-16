@@ -1,9 +1,9 @@
+import api.views
 from django.conf import settings
 from django.conf.urls.static import serve
 from django.contrib import admin
-from django.urls import path, re_path, include
+from django.urls import include, path, re_path
 from rest_framework.routers import DefaultRouter
-import api.views
 
 router = DefaultRouter()
 router.register(r"packages", api.views.PackageViewSet)

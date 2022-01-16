@@ -1,11 +1,12 @@
 from datetime import timedelta
+
 import oauth2_provider.models
+from api.models import Package
+from api.serializers import BookingSerializer
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.utils import timezone
 from rest_framework.test import APITestCase
-from api.models import Package
-from api.serializers import BookingSerializer
 
 Application = oauth2_provider.models.get_application_model()
 AccessToken = oauth2_provider.models.get_access_token_model()
@@ -16,7 +17,10 @@ def create_access_token(user):
     token = AccessToken.objects.create(
         user=user,
         scope="read write packages",
-        token="test{}{}".format(user.id, int(token_expiration_time.timestamp()),),
+        token="test{}{}".format(
+            user.id,
+            int(token_expiration_time.timestamp()),
+        ),
         application=Application.objects.first(),
         expires=token_expiration_time,
     )
@@ -90,6 +94,3 @@ class ValidationTestCase(APITestCase):
         self.assertEqual(
             response.data["street_address"][0], BookingSerializer.STREET_ADDRESS_ERROR
         )
-        data["street_address"] = "100 The Street."
-        response = self.client.post("/api/v1/bookings/", data)
-        self.assertEqual(response.status_code, 201)

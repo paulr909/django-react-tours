@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./OnHold.css";
 
-export default function({ duration }) {
+export default function ({ duration }) {
   const [remaining, setRemaining] = useState(duration);
   useEffect(() => {
     const _timer = setTimeout(() => {

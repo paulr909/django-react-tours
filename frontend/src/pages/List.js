@@ -18,7 +18,7 @@ export class OneItemList extends React.Component {
       thumbnail_url: "/images/map_channel.gif",
       price: 777.77,
       rating: "easy",
-      promo: "Tour package description"
+      promo: "Tour package description",
     };
     return (
       <section className="List" data-testid="list">
@@ -47,8 +47,8 @@ export default class List extends React.Component {
       filters: {
         price_min: null,
         price_max: null,
-        search: ""
-      }
+        search: "",
+      },
     };
     this.updateList();
   }
@@ -65,7 +65,7 @@ export default class List extends React.Component {
     if (filters.search && filters.search.length > 0) {
       queryParams.search = filters.search;
     }
-    ServiceApi.retrieveList(pageIndex, queryParams).then(data => {
+    ServiceApi.retrieveList(pageIndex, queryParams).then((data) => {
       const { results, count } = data;
       this.setState({ list: results, totalItems: count });
     });
@@ -96,7 +96,7 @@ export default class List extends React.Component {
           <Filters onFilterUpdate={this.updateFilters.bind(this)} />
         </header>
         <section className="List-items">
-          {list.map(item => {
+          {list.map((item) => {
             return (
               <Item
                 key={item.id}

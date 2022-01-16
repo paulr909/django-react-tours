@@ -1,12 +1,12 @@
+from api.models import Booking, Package, PackagePermission, WishListItem
+from api.serializers import BookingSerializer, PackageSerializer
 from django.core.cache import cache
-from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.filters import BaseFilterBackend, SearchFilter
-from rest_framework.permissions import BasePermission
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
-from api.models import Package, PackagePermission, WishListItem, Booking
-from api.serializers import PackageSerializer, BookingSerializer
+from rest_framework import viewsets
+from rest_framework.filters import BaseFilterBackend, SearchFilter
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import BasePermission
+from rest_framework.response import Response
 
 
 class CanWritePackageFilterBackend(BaseFilterBackend):
@@ -25,7 +25,9 @@ class CanWritePackageFilterBackend(BaseFilterBackend):
             return queryset
         package_ids = queryset.values_list("id", flat=True)
         own_package_ids = PackagePermission.objects.filter(
-            is_owner=True, package__in=package_ids, user=request.user,
+            is_owner=True,
+            package__in=package_ids,
+            user=request.user,
         ).values_list("package__id", flat=True)
         return queryset.filter(id__in=own_package_ids)
 
@@ -46,7 +48,8 @@ class WishListItemViewSet(viewsets.ViewSet):
     def destroy(self, request, pk=None):
         package_id = pk
         item = self.queryset.filter(
-            session_id=self.session_id, package__in=[package_id],
+            session_id=self.session_id,
+            package__in=[package_id],
         )
         item.delete()
         cache.delete("wish-list:{}".format(self.session_id))

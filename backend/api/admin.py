@@ -1,5 +1,5 @@
+from api.models import Booking, Package, PackagePermission, WishListItem
 from django.contrib import admin
-from api.models import Package, PackagePermission, WishListItem, Booking
 
 
 class PackagePermissionInline(admin.TabularInline):

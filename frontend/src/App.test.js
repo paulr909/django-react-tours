@@ -13,27 +13,27 @@ jest.mock("../src/services/ServiceApi", () => {
     tour_length: 2,
     price: 5000,
     start: "10/04/2019",
-    departure_dates: ["10/04/2019", "12/04/2019"]
+    departure_dates: ["10/04/2019", "12/04/2019"],
   };
   return {
     retrieveWishList: jest.fn(() => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         resolve([exampleTourPackage.id]);
       });
     }),
     retrieveDetails: jest.fn(() => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         resolve(exampleTourPackage);
       });
     }),
     retrieveList: jest.fn((pageIndex, queryParams) => {
-      return new Promise(resolve => {
+      return new Promise((resolve) => {
         resolve({
           results: [exampleTourPackage],
-          count: 1
+          count: 1,
         });
       });
-    })
+    }),
   };
 });
 

@@ -19,16 +19,16 @@ class App extends React.Component {
         name: "",
         email_address: "",
         street_address: "",
-        city: ""
+        city: "",
       },
       item: null,
       handleToggleWishList: this.handleToggleWishList.bind(this),
       handleUpdate: this.handleUpdate.bind(this),
       handleOrder: this.handleOrder.bind(this),
       handleClearOrder: this.handleClearOrder.bind(this),
-      handlePlaceOrder: this.handlePlaceOrder.bind(this)
+      handlePlaceOrder: this.handlePlaceOrder.bind(this),
     };
-    ServiceApi.retrieveWishList().then(data => {
+    ServiceApi.retrieveWishList().then((data) => {
       this.setState({ wishList: data });
     });
   }
@@ -41,7 +41,7 @@ class App extends React.Component {
       toggle = ServiceApi.wishListAdd(itemId);
     }
     toggle.then(() => {
-      ServiceApi.retrieveWishList().then(data => {
+      ServiceApi.retrieveWishList().then((data) => {
         this.setState({ wishList: data });
       });
     });
@@ -54,7 +54,7 @@ class App extends React.Component {
   }
 
   handleOrder(item) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       ServiceApi.wishListCartStatus(item.id, true).then(() => {
         this.setState({ item });
         resolve(item);
@@ -63,7 +63,7 @@ class App extends React.Component {
   }
 
   handleClearOrder(itemId) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       ServiceApi.wishListCartStatus(itemId, false).then(() => {
         this.setState({ item: null });
         resolve();
@@ -82,7 +82,7 @@ class App extends React.Component {
           this.setState({ item: null });
           resolve();
         })
-        .catch(validationErrors => {
+        .catch((validationErrors) => {
           reject(validationErrors);
         });
     });

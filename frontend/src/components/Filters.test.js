@@ -4,12 +4,12 @@ import Filters from "./Filters";
 
 afterEach(cleanup);
 
-it("updates filter", async done => {
-  let callback = filters => {
+it("updates filter", async (done) => {
+  let callback = (filters) => {
     expect(filters).toEqual({
       price_min: "123.45",
       price_max: "",
-      search: ""
+      search: "",
     });
     done();
   };

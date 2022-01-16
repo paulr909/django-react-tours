@@ -21,7 +21,7 @@ export default class Checkout extends React.Component {
       .then(() => {
         this.setState({ validationErrors: [], orderPlaced: true });
       })
-      .catch(validationErrors => {
+      .catch((validationErrors) => {
         this.setState({ validationErrors, orderPlaced: false });
       });
   }
@@ -33,7 +33,7 @@ export default class Checkout extends React.Component {
       { label: "Name", name: "name" },
       { label: "Email Address", name: "email_address" },
       { label: "Street Address", name: "street_address" },
-      { label: "City", name: "city" }
+      { label: "City", name: "city" },
     ];
     if (orderPlaced) {
       return (
@@ -46,7 +46,7 @@ export default class Checkout extends React.Component {
       );
     }
     const errors = [];
-    inputFields.forEach(field => {
+    inputFields.forEach((field) => {
       const error = validationErrors[field.name];
       if (error) {
         errors.push(
@@ -56,7 +56,7 @@ export default class Checkout extends React.Component {
         );
       }
     });
-    const formFields = inputFields.map(fieldProps => {
+    const formFields = inputFields.map((fieldProps) => {
       return (
         <FormFieldHook
           key={fieldProps.name}

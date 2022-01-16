@@ -1,6 +1,7 @@
 import re
+
+from api.models import Booking, Package
 from rest_framework import serializers
-from api.models import Package, Booking
 
 
 class PackageSerializer(serializers.ModelSerializer):

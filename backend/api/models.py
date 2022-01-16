@@ -1,7 +1,7 @@
-from django.db import models
+import django.utils.timezone
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
-import django.utils.timezone
+from django.db import models
 
 
 class Package(models.Model):
